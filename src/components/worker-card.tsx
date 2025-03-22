@@ -137,7 +137,7 @@ export default function WorkerCard(
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
             onClick={handleContactClick}
           >
-            Contact Worker
+            Contact
           </Button>
           <Button
             variant="outline"

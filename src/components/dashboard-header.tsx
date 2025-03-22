@@ -35,6 +35,8 @@ export default function DashboardHeader({
     router.push("/sign-in");
   };
 
+ 
+
   return (
     <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30">
       <div className="flex items-center justify-between px-4 py-3 lg:px-8">
@@ -78,15 +80,15 @@ export default function DashboardHeader({
 
         {/* Right side icons */}
         <div className="flex items-center space-x-3">
-          <Button variant="ghost" size="icon" className="relative">
+          <Button  onClick={() => router.push("/dashboard/notification")} variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
             <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
           </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 font-medium">
+              <Button variant="ghost" className="relative h-16 w-16 rounded-full">
+                <div className="h-8 w-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 font-medium">
                   {profile?.name?.charAt(0) || user.email?.charAt(0) || "U"}
                 </div>
               </Button>

@@ -30,8 +30,7 @@ export default async function WorkersPage() {
   const workers = [
     {
       name: "Rahul Singh",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=rahul",
-      category: "Construction",
+      avatar: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
       skills: ["Masonry", "Painting", "Carpentry"],
       rate: "₹600/day",
       rating: 4.8,
@@ -40,7 +39,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Priya Sharma",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
+      avatar: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjBjbGVhbmluZ3xlbnwwfHwwfHx8MA%3D%3D",
       category: "Cleaning",
       skills: ["House Cleaning", "Office Cleaning"],
       rate: "₹450/day",
@@ -50,7 +49,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Mohammed Khan",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=mohammed",
+      avatar: "https://images.unsplash.com/photo-1581568736305-49a04e012c13?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3VhcmR8ZW58MHx8MHx8fDA%3D",
       category: "Security",
       skills: ["Guard", "Patrolling"],
       rate: "₹550/day",
@@ -60,7 +59,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Lakshmi Devi",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=lakshmi",
+      avatar: "https://images.unsplash.com/photo-1614977645968-6db1d7798ac7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhhcnZlc3Rpbmd8ZW58MHx8MHx8fDA%3D",
       category: "Farming",
       skills: ["Harvesting", "Planting"],
       rate: "₹500/day",
@@ -70,7 +69,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Rajesh Kumar",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=rajesh",
+      avatar: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZWxlY3RyaWNhbHxlbnwwfHwwfHx8MA%3D%3D",
       category: "Construction",
       skills: ["Electrical", "Plumbing"],
       rate: "₹650/day",
@@ -80,7 +79,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Anita Patel",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=anita",
+      avatar: "https://images.unsplash.com/photo-1601160458000-2b11f9fa1a0e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGVlcCUyMGNsZWFuaW5nfGVufDB8fDB8fHww",
       category: "Cleaning",
       skills: ["Deep Cleaning", "Sanitization"],
       rate: "₹500/day",
@@ -90,7 +89,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Suresh Reddy",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=suresh",
+      avatar: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2N0diUyMG1vbml0b3Jpbmd8ZW58MHx8MHx8fDA%3D",
       category: "Security",
       skills: ["CCTV Monitoring", "Night Guard"],
       rate: "₹600/day",
@@ -100,7 +99,7 @@ export default async function WorkersPage() {
     },
     {
       name: "Meena Kumari",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=meena",
+      avatar: "https://images.unsplash.com/photo-1589876568181-a1508b8ef473?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "Farming",
       skills: ["Crop Management", "Irrigation"],
       rate: "₹450/day",

@@ -43,6 +43,8 @@ export async function GET(request: NextRequest) {
       formatted: `${data.address.city || data.address.town || data.address.village || data.address.hamlet || ""}, ${data.address.state || ""}`,
     };
 
+    console.log("Location data:", locationData);
+
     return NextResponse.json(locationData);
   } catch (error) {
     console.error("Error fetching location data:", error);

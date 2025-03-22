@@ -37,7 +37,7 @@ export default async function Dashboard() {
   // Sample worker data (in a real app, this would come from the database)
   const nearbyWorkers = [
     {
-      id: 1,
+      id: "1",
       name: "Rahul Singh",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=rahul",
       category: "Construction",

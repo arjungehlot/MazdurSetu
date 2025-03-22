@@ -135,7 +135,7 @@ export default function EmployerSignUpPage({
 
           <div className="grid gap-2">
             <Link href="/sign-up/worker">
-              <Button variant="outline" className="w-full">
+              <Button className="w-full">
                 Register as Worker
               </Button>
             </Link>

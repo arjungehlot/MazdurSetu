@@ -18,10 +18,8 @@ export default function UserProfile() {
             const { data: { user } } = await supabase.auth.getUser();
             setUser(user);
         };
-
         fetchUser();
     }, [supabase.auth]);
-
     const handleSignOut = async () => {
         await supabase.auth.signOut();
         router.refresh();

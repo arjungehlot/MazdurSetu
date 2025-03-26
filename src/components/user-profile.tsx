@@ -25,6 +25,7 @@ export default function UserProfile() {
         router.refresh();
     };
 
+    
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>

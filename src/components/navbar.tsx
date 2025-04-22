@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { createClient } from "../../supabase/server";
 import { Button } from "./ui/button";
-import { User, UserCircle } from "lucide-react";
+import {
+  User,
+  UserCircle,
+  MapPin,
+  Briefcase,
+  FileText,
+  Home,
+  Users,
+} from "lucide-react";
 import UserProfile from "./user-profile";
+import { cookies } from "next/headers";
 
 export default async function Navbar() {
   const supabase = createClient();
@@ -11,48 +20,111 @@ export default async function Navbar() {
     data: { user },
   } = await (await supabase).auth.getUser();
 
+  // Get location data from cookies (set by LocationProvider)
+  const cookieStore = cookies();
+  const locationCookie = cookieStore.get("user-location");
+  const locationData = locationCookie
+    ? JSON.parse(decodeURIComponent(locationCookie.value))
+    : null;
+  const locationDisplay = locationData?.city
+    ? `${locationData.city}, ${locationData.state || ""}`
+    : null;
+
   return (
-    <nav className="w-full border-b border-gray-200 bg-white dark:bg-gray-800 py-4 shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link
-          href="/"
-          prefetch
-          className="text-2xl font-bold text-blue-600 dark:text-blue-400 flex items-center"
-        >
-          <span className="bg-blue-600 dark:bg-blue-500 text-white p-1 rounded-md mr-2">
-            MS
-          </span>
-          Mazdur Setu
-        </Link>
-        <div className="flex gap-4 items-center">
-          {user ? (
-            <>
-              <Link
-                href="/dashboard"
-                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700">
-                  Dashboard
-                </Button>
-              </Link>
-              <UserProfile />
-            </>
-          ) : (
-            <>
-              <Link
-                href="/sign-in"
-                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/sign-up"
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-md transition-colors duration-200"
-              >
-                Sign Up
-              </Link>
-            </>
-          )}
+    <nav className="w-full border-b border-blue-100 bg-white py-3 shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4">
+        {/* Top row with logo, location and auth */}
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              prefetch
+              className="text-2xl font-bold text-blue-600 flex items-center"
+            >
+              <span className="bg-blue-600 text-white p-1.5 rounded-md mr-2 shadow-sm">
+                MS
+              </span>
+              Mazdur Setu
+            </Link>
+
+            {locationDisplay && (
+              <div className="hidden md:flex items-center text-sm text-blue-600">
+                <MapPin className="h-4 w-4 mr-1 text-blue-500" />
+                {locationDisplay}
+              </div>
+            )}
+          </div>
+
+          <div className="flex gap-4 items-center">
+            {user ? (
+              <>
+                {user && (
+                  <>
+                    <Link
+                      href="/post-job"
+                      className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
+                    >
+                      <Briefcase className="h-4 w-4 mr-1.5" />
+                      Post Job
+                    </Link>
+                    <Link
+                      href="/applications"
+                      className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
+                    >
+                      <FileText className="h-4 w-4 mr-1.5" />
+                      My Applications
+                    </Link>
+                  </>
+                )}
+                <Link
+                  href="/dashboard"
+                  className="px-4 py-2 text-sm font-medium"
+                >
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-sm">
+                    Dashboard
+                  </Button>
+                </Link>
+                <UserProfile />
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/"
+                  className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
+                >
+                  <Home className="h-4 w-4 mr-1.5" />
+                  Home
+                </Link>
+                <Link
+                  href="/dashboard/workers"
+                  className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
+                >
+                  <Users className="h-4 w-4 mr-1.5" />
+                  Workers
+                </Link>
+                <Link
+                  href="/employers"
+                  className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
+                >
+                  <Briefcase className="h-4 w-4 mr-1.5" />
+                  Employers
+                </Link>
+
+                <Link
+                  href="/sign-in"
+                  className="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200 shadow-sm"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </nav>

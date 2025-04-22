@@ -47,10 +47,14 @@ export default async function Navbar() {
               Mazdur Setu
             </Link>
 
+            <MapPin className="h-5 w-5 ml-9 text-blue-500" />
+            <span className="text-sm  text-gray-600">Bhopal, Madhya Pradesh</span>
+
             {locationDisplay && (
               <div className="hidden md:flex items-center text-sm text-blue-600">
                 <MapPin className="h-4 w-4 mr-1 text-blue-500" />
                 {locationDisplay}
+                
               </div>
             )}
           </div>

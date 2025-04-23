@@ -65,14 +65,14 @@ export default async function Navbar() {
                 {user && (
                   <>
                     <Link
-                      href="/post-job"
+                      href="/dashboard/job-posts/"
                       className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
                     >
                       <Briefcase className="h-4 w-4 mr-1.5" />
                       Post Job
                     </Link>
                     <Link
-                      href="/applications"
+                      href="/dashboard/applications"
                       className="flex items-center px-5 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors mx-1"
                     >
                       <FileText className="h-4 w-4 mr-1.5" />

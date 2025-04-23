@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../../../../supabase/client";
 import DashboardSidebar from "@/components/dashboard-sidebar";
@@ -27,7 +27,7 @@ export default function CreateJobPostPage() {
     requirements: "",
   });
 
-  useState(() => {
+  useEffect(() => {
     const fetchUser = async () => {
       const {
         data: { user },

@@ -18,6 +18,7 @@ import {
   MessageSquare,
   Sun,
   Moon,
+  Briefcase,
 } from "lucide-react";
 import { createClient } from "../../supabase/client";
 import { useRouter } from "next/navigation";
@@ -47,6 +48,7 @@ export default function DashboardSidebar({
   const navItems = [
     { name: "Dashboard", href: "/dashboard", icon: Home },
     { name: "Find Workers", href: "/dashboard/workers", icon: Users },
+    { name: "Apply for work", href: "/dashboard/job-posts/1", icon: Users },
     { name: "Map View", href: "/dashboard/map", icon: Map },
     { name: "Schedule", href: "/dashboard", icon: Calendar, comingSoon: true },
     { name: "Payments", href: "/dashboard/payments", icon: CreditCard },

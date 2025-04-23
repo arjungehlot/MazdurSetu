@@ -42,9 +42,9 @@ export default async function Navbar() {
               className="text-2xl font-bold text-blue-600 flex items-center"
             >
               <span className="bg-blue-600 text-white p-1.5 rounded-md mr-2 shadow-sm">
-                MS
+                RS
               </span>
-              Mazdur Setu
+              Rozgar Setu
             </Link>
 
             <MapPin className="h-5 w-5 ml-9 text-blue-500" />

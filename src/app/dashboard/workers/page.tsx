@@ -31,6 +31,7 @@ export default async function WorkersPage() {
     {
       name: "Rahul Singh",
       avatar: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+      category: "Construction",
       skills: ["Masonry", "Painting", "Carpentry"],
       rate: "₹600/day",
       rating: 4.8,

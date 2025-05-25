@@ -9,16 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import moment from "moment";
-
-// Define types
-type User = {
-  id: string;
-  email?: string;
-  app_metadata?: any;
-  user_metadata?: any;
-  aud?: string;
-  created_at?: string;
-};
+import type { User } from "@supabase/auth-js";
 
 type Notification = {
   id: number;
